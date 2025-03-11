@@ -1,0 +1,38 @@
+.App {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #ccf0a8;
+    color: rgb(44, 44, 44);
+    text-align: center;
+    place-items: center;
+    /* max-width: 800px; */
+    max-height: 150vh;
+  }
+  
+  input,
+  select,
+  button {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: bisque;
+    min-width: max-content;
+    
+  }
+  
+  .configuracoes {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  .container{
+    display: flex;
+    flex-direction: column ;
+    background-color: rgba(42, 43, 44, 0);
+    border: #000000;
+    border-style: dotted;
+    border-radius: 25px;
+    align-items:stretch;
+    text-align: left;
+    
+  }
