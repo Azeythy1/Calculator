@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import CalculoLucro from "./CalculoLucro";
 
-function TaxasForm({ taxas, setMostrarConfiguracoes }) {
+function TaxasForm({ taxas }) {
   const [valorAVista, setValorAVista] = useState("");
   const [entrada, setEntrada] = useState("");
   const [parcelas, setParcelas] = useState(1);
-  // const [valorFinal, setValorFinal] = useState(0);
   const [erro, setErro] = useState("");
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [valorAParcelar, setValorAParcelar] = useState(0);
@@ -69,7 +68,6 @@ function TaxasForm({ taxas, setMostrarConfiguracoes }) {
         </select>
       </div>
       <button onClick={calcular}>Calcular</button>
-      <button onClick={() => setMostrarConfiguracoes(true)}>Editar Taxas</button>
       {erro && <p style={{ color: "red" }}>{erro}</p>}
       {mostrarResultado && (
         <CalculoLucro valorAParcelar={valorAParcelar} taxa={taxa} />
