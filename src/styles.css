@@ -2,21 +2,27 @@
   font-family: Arial, sans-serif;
   padding: 20px;
   background-color: #777777;
-  color: rgb(255, 248, 248);
+  color: rgb(0, 0, 0);
   text-align: center;
   place-items: center;
-  /* max-width: 800px; */
   max-height: 150vh;
+  text-shadow:2px, 1px, 2px, 2px #000000;
 }
-
+p{
+  text-align: center;
+  font-size: large;
+  text-transform: capitalize;
+}
 input{
-
   margin: 5px;
   padding: 8px;
   border-radius: 10px;
   background-color: rgb(231, 227, 222);
   width: 300px;
 
+}
+.content{
+  font-weight: 600;
 }
 select{
   font-size:large;
@@ -30,14 +36,30 @@ button {
   margin: 5px;
   padding: 8px;
   border-radius: 10px;
-  background-color: rgb(104, 238, 220);
+  background-color: rgb(104, 166, 238);
   min-width: max-content;
   
 }
-
+button:hover {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(64, 75, 122);
+  min-width: max-content;
+  color: #dadada;
+  
+}
+input:hover {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(183, 193, 236);
+  min-width: max-content;
+  
+}
 .configuracoes {
   margin-top: 20px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #dadada;
   padding-top: 20px;
 }
 .container{

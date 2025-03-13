@@ -20,9 +20,9 @@ function CalculoLucro({ valorAParcelar, taxa }) {
   const valorFinalArredondado = Math.ceil(valorF);
 
   return (
-    <div>
+    <div className="content">
       <h3>Resultado:</h3>
-      <p><span>Valor Restante :</span> R$ {x.toFixed(2)}</p>
+      <p>Valor Restante : R$ {x.toFixed(2)}</p>
       <p>Valor Final : R$ {valorFinalArredondado}</p>
       {/* <p>Lucro Garantido: R$ {(x - valorAParcelar).toFixed(2)}</p> */}
     </div>

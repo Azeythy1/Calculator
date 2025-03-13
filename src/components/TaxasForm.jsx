@@ -41,8 +41,8 @@ function TaxasForm({ taxas }) {
 
   return (
     <div className="container">
-      <div>
-        <label>Valor à Vista (A):</label>
+      <div className="content"> 
+        <label>Valor à Vista:</label>
         <input
           type="number"
           value={valorAVista}
@@ -50,7 +50,7 @@ function TaxasForm({ taxas }) {
         />
       </div>
       <div>
-        <label>Valor de Entrada (B):</label>
+        <label className="content">Valor de Entrada:</label>
         <input
           type="number"
           value={entrada}
@@ -58,7 +58,7 @@ function TaxasForm({ taxas }) {
         />
       </div>
       <div>
-        <label>Parcelas (D):</label>
+        <label className="content">Parcelas:</label>
         <select value={parcelas} onChange={(e) => setParcelas(parseInt(e.target.value))}>
           {[...Array(18).keys()].map((i) => (
             <option key={i + 1} value={i + 1}>
