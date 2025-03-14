@@ -29,8 +29,8 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <h1>Calculadora de Taxas</h1>
+    <div className="app-container">
+      <h1 className="app-title">Calculadora de Taxas</h1>
       <TaxasForm taxas={taxas} />
     </div>
   );

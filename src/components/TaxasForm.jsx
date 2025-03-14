@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CalculoLucro from "./CalculoLucro";
 
 function TaxasForm({ taxas }) {
   const [valorAVista, setValorAVista] = useState("");
@@ -8,7 +7,19 @@ function TaxasForm({ taxas }) {
   const [erro, setErro] = useState("");
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [valorAParcelar, setValorAParcelar] = useState(0);
-  const [taxa, setTaxa] = useState(0);
+  const [valorParcelado, setValorParcelado] = useState(0);
+
+  // Função para arredondar o valor para o próximo múltiplo de 5 ou 10
+  const arredondarValor = (valor) => {
+    const ultimoDigito = valor % 10; // Pega o último dígito do número
+    if (ultimoDigito === 0 || ultimoDigito === 5) {
+      return valor; // Já é múltiplo de 5 ou 10
+    } else if (ultimoDigito < 5) {
+      return valor - ultimoDigito + 5; // Arredonda para cima para o próximo 5
+    } else {
+      return valor - ultimoDigito + 10; // Arredonda para cima para o próximo 10
+    }
+  };
 
   const calcular = () => {
     // Validações de entrada
@@ -33,44 +44,64 @@ function TaxasForm({ taxas }) {
     const valorC = valorA - valorB; // C = A - B
     const taxaParcelas = parcelas === 1 ? taxas.debito / 100 : taxas.credito[parcelas] / 100;
 
+    // Calcula o valor parcelado
+    let valorP = valorC * (1 + taxaParcelas);
+
+    // Arredonda o valor parcelado
+    valorP = arredondarValor(valorP);
+
     setValorAParcelar(valorC);
-    setTaxa(taxaParcelas);
+    setValorParcelado(valorP);
     setMostrarResultado(true); // Exibe o resultado
     setErro(""); // Limpa mensagens de erro
   };
 
   return (
-    <div className="container">
-      <div className="content"> 
-        <label>Valor à Vista:</label>
+    <div className="taxas-form-container">
+      <div className="input-group">
+        <label className="input-label">Valor à Vista (A):</label>
         <input
           type="number"
           value={valorAVista}
           onChange={(e) => setValorAVista(e.target.value)}
+          className="input-field"
         />
       </div>
-      <div>
-        <label className="content">Valor de Entrada:</label>
+      <div className="input-group">
+        <label className="input-label">Valor de Entrada (B):</label>
         <input
           type="number"
           value={entrada}
           onChange={(e) => setEntrada(e.target.value)}
+          className="input-field"
         />
       </div>
-      <div>
-        <label className="content">Parcelas:</label>
-        <select value={parcelas} onChange={(e) => setParcelas(parseInt(e.target.value))}>
+      <div className="input-group">
+        <label className="input-label">Parcelas (D):</label>
+        <select
+          value={parcelas}
+          onChange={(e) => setParcelas(parseInt(e.target.value))}
+          className="select-field"
+        >
           {[...Array(18).keys()].map((i) => (
-            <option key={i + 1} value={i + 1}>
+            <option key={i + 1} value={i + 1} className="select-option">
               {i + 1}x
             </option>
           ))}
         </select>
       </div>
-      <button onClick={calcular}>Calcular</button>
-      {erro && <p style={{ color: "red" }}>{erro}</p>}
+      <button onClick={calcular} className="calculate-button">
+        Calcular
+      </button>
+      {erro && <p className="error-message">{erro}</p>}
       {mostrarResultado && (
-        <CalculoLucro valorAParcelar={valorAParcelar} taxa={taxa} />
+        <div className="result-container">
+          <p>Valor restante: R$ {valorAParcelar.toFixed(2)}</p>
+          <p>
+            Valor parcelado: R$ {valorParcelado.toFixed(2)} em {parcelas}x de R${" "}
+            {(valorParcelado / parcelas).toFixed(2)}
+          </p>
+        </div>
       )}
     </div>
   );
