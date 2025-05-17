@@ -30,12 +30,15 @@ function App() {
   });
 
   return (
+    <> 
     <div className="app-container">
       <h1 className="app-title">Calculadora de Taxas</h1>
       <TaxasForm taxas={taxas} />
 
-      <Footer />
+      
     </div>
+    <Footer />
+     </>
   );
 }
 
