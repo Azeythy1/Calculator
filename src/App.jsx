@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TaxasForm from './components/TaxasForm';
 import './styles.css';
+import Footer from './components/footer';
 
 function App() {
   
@@ -32,6 +33,8 @@ function App() {
     <div className="app-container">
       <h1 className="app-title">Calculadora de Taxas</h1>
       <TaxasForm taxas={taxas} />
+
+      <Footer />
     </div>
   );
 }

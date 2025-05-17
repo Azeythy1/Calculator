@@ -59,7 +59,7 @@ function TaxasForm({ taxas }) {
   return (
     <div className="taxas-form-container">
       <div className="input-group">
-        <label className="input-label">Valor à Vista (A):</label>
+        <label className="input-label">Valor à Vista:</label>
         <input
           type="number"
           value={valorAVista}
@@ -68,7 +68,7 @@ function TaxasForm({ taxas }) {
         />
       </div>
       <div className="input-group">
-        <label className="input-label">Valor de Entrada (B):</label>
+        <label className="input-label">Valor de Entrada:</label>
         <input
           type="number"
           value={entrada}
@@ -77,7 +77,7 @@ function TaxasForm({ taxas }) {
         />
       </div>
       <div className="input-group">
-        <label className="input-label">Parcelas (D):</label>
+        <label className="input-label">Parcelas:</label>
         <select
           value={parcelas}
           onChange={(e) => setParcelas(parseInt(e.target.value))}
