@@ -94,3 +94,45 @@ footer {
   color: #b6b2b2;
   background: #575757;
 }
+/* Adicione estas regras ao seu arquivo styles.css */
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.result-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.result-value {
+  color: #333;
+}
+
+.parcela-row {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 2px solid #ddd;
+}
+
+.parcela-value {
+  background: linear-gradient(135deg, #d10000, #8b0000);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.result-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

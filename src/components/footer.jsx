@@ -1,12 +1,11 @@
-export default function Footer() {
+import React from 'react';
+
+function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <p className="footer-text">
-            Desenvolvido por [Rodrigo Oliveira],
-            © 2023 Todos os direitos reservados</p>
-        <p>Version 17.05.25</p>
-      </div>
+    <footer>
+      <p>© 2023 Calculadora de Taxas - Todos os direitos reservados</p>
     </footer>
   );
 }
+
+export default Footer;
